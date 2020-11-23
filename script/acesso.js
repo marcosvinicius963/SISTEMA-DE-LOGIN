@@ -6,7 +6,7 @@ $(function(){
         var campoSenha = $("form#formularioLogin #senha").val();
 
         if(campoEmail.trim() == "" || campoSenha.trim() ==""){
-            $("div#mensagem").html("Preencha todos os campos.");
+            $("div#mensagem").show().removeClass("red").html("Preencha todos os campos.");
         }else{
 
             $.ajax ({
@@ -21,14 +21,14 @@ $(function(){
                     retorno = JSON.parse(retorno);
 
                     if(retorno["erro"]){
-                        $("div#mensagem").html(retorno["mensagem"]);
+                        $("div#mensagem").show().addClass("red").html(retorno["mensagem"]);
                     }else{
                         window.location = "dashboard.php"
                     }
                 },
 
                 error: function(){
-                    $("div#mensagem").html("Ocorreu um erro durante a solicitação");
+                    $("div#mensagem").show().addClass("red").html("Ocorreu um erro durante a solicitação");
                 }
             });
         }
