@@ -28,7 +28,7 @@ header{
     font-family: MuseoSans;
     font-size: 22px;
     letter-spacing: 3px;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .5);
 }
 
 div#mensagem{
@@ -104,11 +104,11 @@ div#formulario form div#linha label{
 }
 
 div#formulario form div#linha input{
-    background: #eee;
+    background:#eee;
     border: 2px solid #eee;
     border-radius: 2px;
     height: 11px;
-    padding: 10px 6px;
+    padding: 16px 6px;
     width: calc(100% - 16px);
 }
 
