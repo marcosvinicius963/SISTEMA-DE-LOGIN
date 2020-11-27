@@ -57,6 +57,11 @@ div#formulario{
     margin-left: -485px;
 }
 
+div#formulario.cadastro{
+    height: 420px;
+    margin-top: -210px;
+}
+
 div#formulario:after{
     content: "";
     position: absolute;
@@ -69,6 +74,10 @@ div#formulario:after{
     z-index: -1;
 }
 
+div#formulario.cadastro:after{
+    height: 320px;
+}
+
 div#formulario form{
     width: 350px;
     height: 290px;
@@ -77,6 +86,11 @@ div#formulario form{
     padding: 30px 50px;
     box-shadow: 0 0 50px rgba(0, 0, 0, .3);
     float: left;
+}
+
+div#formulario form#formularioCadastro{
+    display: none;
+    height: 360px;
 }
 
 div#formulario form span.title{
@@ -130,13 +144,19 @@ div#formulario form div#button button{
     cursor: pointer;
 }
 
-div#formulario div#textoCadastro{
+div#formulario div#textoLogin{
+    display: none;
+}
+
+div#formulario div#textoCadastro,
+div#formulario div#textoLogin{
     float: right;
     width: 400px;
     padding-top: 90px;
 }
 
-div#formulario div#textoCadastro span.title{
+div#formulario div#textoCadastro span.title,
+div#formulario div#textoLogin span.title{
     font-family: MuseoSans;
     font-size: 20px;
     text-transform: uppercase;
@@ -146,7 +166,8 @@ div#formulario div#textoCadastro span.title{
     margin-bottom: 30px;
 }
 
-div#formulario div#textoCadastro span.subtitle{
+div#formulario div#textoCadastro span.subtitle,
+div#formulario div#textoLogin span.subtitle{
     font-family: FuturaPT;
     font-size: 20px;
     text-transform: uppercase;
@@ -155,7 +176,8 @@ div#formulario div#textoCadastro span.subtitle{
     color: #8c8c8c;
 }
 
-div#formulario div#textoCadastro button{
+div#formulario div#textoCadastro button,
+div#formulario div#textoLogin button{
     margin-top: 30px;
     font-family: MuseoSans;
     font-size: 13px;

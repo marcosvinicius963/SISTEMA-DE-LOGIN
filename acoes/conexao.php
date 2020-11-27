@@ -1,13 +1,19 @@
 <?php
-    $server = "127.0.0.1";
-    $usuario = "root";
-    $senha = "";
-    $banco = "sistema-login";
-    try{
-        $conexao = new PDO("mysql:host=$server;dbname=$banco", $usuario, $senha);
-        $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }catch(PDOException $erro){
-        //echo "Ocorreu um erro de conexao: {$erro->getMessage()}";
-        $conexao = null;
-    }
+    Class Conexao{
+        private $server = "127.0.0.1";
+        private $usuario = "root";
+        private $senha = "";
+        private $banco = "sistema-login";
+        
+        public function conectar(){
+            try{
+                $conexao = new PDO("mysql:host=$this->server;dbname=$this->banco", $this->usuario, $this->senha);
+                $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            }catch(PDOException $erro){
+                $conexao = null;
+            }
+
+            return $conexao;
+        }
+    };
 ?>

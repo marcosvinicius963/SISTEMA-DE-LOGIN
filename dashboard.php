@@ -4,6 +4,9 @@
     if(isset($_SESSION["usuario"]) && is_array($_SESSION["usuario"])){
         require("acoes/conexao.php");
 
+        $conexaoClass = new Conexao();
+        $conexao = $conexaoClass->conectar();
+
 
         $adm = $_SESSION["usuario"][1];
         $nome = $_SESSION["usuario"][0];
