@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     outline: none;
+    list-style-type: none;
+    text-decoration: none;
 }
 
 @font-face{
@@ -23,18 +25,51 @@ body, html{
 header{
     padding: 30px 0;
     text-align: center;
-    color: white;
+    color: #fff;
     text-transform: uppercase;
     font-family: MuseoSans;
     font-size: 22px;
     letter-spacing: 3px;
     background: rgba(0, 0, 0, .5);
+    position: relative;
+    z-index: 2;
+}
+
+div#subheader{
+    width: 100%;
+    display: block;
+    background: #21273d;
+    text-align: center;
+    height: 60px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
+    z-index: 1;
+    position: relative;
+}
+div#subheader li{
+    display: inline-block;
+}
+
+div#subheader li a{
+    font-family: MuseoSans;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    height: 14px;
+    padding: 23px 12px;
+    display: block;
+    transition: .4s;
+}
+
+div#subheader li a:hover{
+    color: #D29F4E;
+    background: rgba(0, 0, 0, .2);
 }
 
 div#mensagem{
     padding: 15px 0;
     font-family: MuseoSans;
-    color: white;
+    color: #fff;
     background: #FF4500;
     text-align: center;
     letter-spacing: 1px;
@@ -53,13 +88,13 @@ div#formulario{
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -175px;
+    margin-top: calc(-175px + 48px);
     margin-left: -485px;
 }
 
 div#formulario.cadastro{
     height: 420px;
-    margin-top: -210px;
+    margin-top: calc(-210px + 48px);   
 }
 
 div#formulario:after{
@@ -69,7 +104,7 @@ div#formulario:after{
     height: 250px;
     top: 50px;
     left:-50px;
-    background: white;
+    background: #fff;
     border-radius: 5px;
     z-index: -1;
 }
@@ -122,7 +157,7 @@ div#formulario form div#linha input{
     border: 2px solid #eee;
     border-radius: 2px;
     height: 11px;
-    padding: 16px 6px;
+    padding: 15px 6px;
     width: calc(100% - 16px);
 }
 
@@ -170,9 +205,8 @@ div#formulario div#textoCadastro span.subtitle,
 div#formulario div#textoLogin span.subtitle{
     font-family: FuturaPT;
     font-size: 20px;
-    text-transform: uppercase;
     display: block;    
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     color: #8c8c8c;
 }
 
@@ -191,3 +225,16 @@ div#formulario div#textoLogin button{
     cursor: pointer;
 }
 
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: FuturaPT;
+    color: #fff;
+    background: rgba(0, 0, 0, .3);
+}

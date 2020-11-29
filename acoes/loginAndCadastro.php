@@ -15,10 +15,15 @@
             }
 
             switch(true){
-                case (isset($_POST["email"]) && isset($_POST["senha"]));
+                case (isset($_POST["type"]) && $_POST["type"] == 'login' && isset($_POST["email"]) && isset($_POST["senha"])):
                     echo $this->login($_POST["email"], $_POST["senha"]);
                     break;
-            }
+                    
+                case (isset($_POST["type"]) && $_POST["type"] == 'cadastro' && isset($_POST["email"]) && isset($_POST["senha"]) && isset($_POST["nome"])):
+                    echo $this->cadastro($_POST["email"], $_POST["senha"], $_POST["nome"]);
+                    break;
+
+            }   
 
         }
 
@@ -36,8 +41,23 @@
 
                     return json_encode(array("erro" => 0));         
                 }else{
-                    return json_encode(array("erro" => 1,"mensagem" => "Email e/ou senha incorretos."));
+                    return json_encode(array("erro" => 1, "mensagem" => "Email e/ou senha incorretos."));
                 }  
+            }
+
+            public function cadastro($email, $senha, $nome){
+                $conexao = $this->con;
+
+                $query = $conexao->prepare("INSERT INTO usuarios (email, senha, nome, adm) VALUES (?, ?, ?, ?)");
+                
+                if ($query->execute(array($email, $senha, $nome, 0))){
+                    session_start();
+                    $_SESSION["usuario"] = array($nome, 0);
+
+                    return json_encode(array("erro" => 0)); 
+                }else{
+                    return json_encode(array("erro" => 1,"mensagem" => "Ocorreu um erro ao cadastrar usuario."));
+                }
             }
     };
 
