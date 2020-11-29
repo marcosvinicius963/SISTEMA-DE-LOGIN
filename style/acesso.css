@@ -238,3 +238,18 @@ footer{
     color: #fff;
     background: rgba(0, 0, 0, .3);
 }
+
+
+/*footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: FuturaPT;
+    color: #fff;
+    background: rgba(0, 0, 0, .3);
+}
