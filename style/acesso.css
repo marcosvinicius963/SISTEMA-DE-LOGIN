@@ -45,6 +45,7 @@ div#subheader{
     z-index: 1;
     position: relative;
 }
+
 div#subheader li{
     display: inline-block;
 }
